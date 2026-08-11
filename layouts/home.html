@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<section class="hero">
+  <div class="container hero-inner">
+
+    <p class="eyebrow">Welcome</p>
+
+    <h1>{{ .Title }}</h1>
+
+    <div class="intro">
+      {{ .Content }}
+    </div>
+
+    <a class="button" href="#about">Find out more</a>
+
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container narrow">
+
+    <h2>About this site</h2>
+
+    <p>
+      This is our first Hugo website. The structure is generated
+      with Hugo, while the visual design is ordinary HTML and CSS.
+    </p>
+
+  </div>
+</section>
+
+{{ end }}

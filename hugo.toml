@@ -1,3 +1,4 @@
-baseURL = 'https:/www.cerimackenzie.com/'
+baseURL = 'https://www.cerimackenzie.com/'
 locale = 'en-gb'
 title = 'My Website'
+disableKinds = ['taxonomy', 'term']
