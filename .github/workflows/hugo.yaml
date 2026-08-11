@@ -1,0 +1,74 @@
+name: Build and deploy Hugo site
+
+on:
+  push:
+    branches:
+      - main
+
+  # Allows you to run the workflow manually from GitHub
+  workflow_dispatch:
+
+# Permissions required for GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only allow one Pages deployment at a time
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      HUGO_VERSION: 0.164.0
+
+    steps:
+      # Get the files from our repository
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # Configure GitHub Pages
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
+      # Install Hugo
+      - name: Install Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.tar.gz \
+            https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz
+
+          sudo tar -C /usr/local/bin -xf ${{ runner.temp }}/hugo.tar.gz hugo
+
+      # Build the website
+      - name: Build with Hugo
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # Package the generated site for GitHub Pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
