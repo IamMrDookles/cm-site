@@ -1,4 +1,4 @@
 baseURL = 'https://www.cerimackenzie.com/'
 locale = 'en-gb'
-title = 'My Website'
+title = 'Ceri Mackenzie Hypnotherapy'
 disableKinds = ['taxonomy', 'term']
