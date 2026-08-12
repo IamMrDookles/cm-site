@@ -1,14 +1,15 @@
 ---
 
-title: "Welcome to our website"
+title: "Feel better. Think differently. Move forward."
 
 ---
 
 
 
-This is the introductory text for our new website.
+## Hypnotherapy with Ceri Mackenzie.
 
+Sometimes, knowing what you *should* do isn't enough.  
 
+You might understand your habits, recognise the thoughts that hold you back, or know exactly what you want to change, but still find yourself doing the same things.
 
-The content lives in **Markdown**, while Hugo handles the HTML structure around it.
-
+Hypnotherapy can help you break that cycle.

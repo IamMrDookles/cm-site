@@ -2,3 +2,29 @@ baseURL = 'https://www.cerimackenzie.com/'
 locale = 'en-gb'
 title = 'Ceri Mackenzie Hypnotherapy'
 disableKinds = ['taxonomy', 'term']
+
+[menus]
+
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Resources'
+    pageRef = '/resources'
+    weight = 30
+
+  [[menus.main]]
+    name = 'Contact'
+    pageRef = '/contact'
+    weight = 40
+
+[privacy]
+  [privacy.youTube]
+    privacyEnhanced = true
