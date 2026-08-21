@@ -1,7 +1,7 @@
 ---
 title: "Feel better. Think differently. Move forward."
 description: "Personal, collaborative hypnotherapy with Ceri Mackenzie in Cambridgeshire and online worldwide."
-intro: "Sometimes, knowing what you should do is not enough. Hypnotherapy can offer a different way forward."
+intro: "Sometimes, knowing what you should do isn't enough. Hypnotherapy can offer a different way forward."
 eyebrow: "Hypnotherapy with Ceri Mackenzie"
 heroLabel: "Portrait of Ceri Mackenzie"
 heroCta:
@@ -43,7 +43,7 @@ People consider hypnotherapy for many different concerns, from anxiety, confiden
 
 Talking about something personal can feel daunting. Ceri aims to offer a calm, supportive and non-judgemental setting where you can speak openly and at your own pace.
 
-You do not need to have everything figured out. You only need to be ready to explore the possibility that things could be different.
+You don't need to have everything figured out. You only need to be ready to explore the possibility that things could be different.
 {{< /section >}}
 
 {{< section tone="warm" width="wide" id="process" >}}
