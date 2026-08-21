@@ -1,0 +1,7 @@
+{{- $output := partial "components/cta.html" (dict
+  "Title" (.Get "title")
+  "Text" (.Get "text")
+  "Href" (.Get "href")
+  "Label" (.Get "label")
+) -}}
+{{ partial "components/shortcode-output.html" (dict "Parent" .Parent "Ordinal" .Ordinal "Output" $output) }}

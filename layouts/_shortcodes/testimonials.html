@@ -1,0 +1,2 @@
+{{- $output := partial "components/testimonials.html" . -}}
+{{ partial "components/shortcode-output.html" (dict "Parent" .Parent "Ordinal" .Ordinal "Output" $output) }}

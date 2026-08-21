@@ -1,0 +1,12 @@
+{{- $output := partial "components/split.html" (dict
+  "Page" .Page
+  "Store" .Store
+  "Inner" .Inner
+  "Title" (.Get "title")
+  "Label" (.Get "label")
+  "Ratio" (.Get "ratio")
+  "MediaPosition" (.Get "mediaPosition")
+  "Image" (.Get "image")
+  "Alt" (.Get "alt")
+) -}}
+{{ partial "components/shortcode-output.html" (dict "Parent" .Parent "Ordinal" .Ordinal "Output" $output) }}

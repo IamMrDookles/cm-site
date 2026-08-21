@@ -1,0 +1,29 @@
+{{- $items := slice -}}
+{{- if .Param -}}
+  {{- with index .Page.Params .Param -}}
+    {{- $items = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if $items -}}
+  <ol class="steps-list">
+    {{- range $index, $item := $items }}
+      <li class="steps-list__item">
+        <span class="steps-list__number" aria-hidden="true">{{ add $index 1 }}</span>
+        <div class="steps-list__content">
+          {{- with $item.title }}
+            <h3>{{ . }}</h3>
+          {{- else }}
+            <p class="component-placeholder">Step title to be confirmed</p>
+          {{- end }}
+          {{- with $item.text }}
+            <p>{{ . }}</p>
+          {{- else }}
+            <p class="component-placeholder">Step details to be added.</p>
+          {{- end }}
+        </div>
+      </li>
+    {{- end }}
+  </ol>
+{{- else }}
+  <div class="component-placeholder component-placeholder--block">Process steps will be added here.</div>
+{{- end }}

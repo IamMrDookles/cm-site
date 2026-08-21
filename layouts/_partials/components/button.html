@@ -1,0 +1,11 @@
+{{- $href := .href -}}
+{{- $text := .text -}}
+{{- $variant := .variant | default "primary" -}}
+{{- if not (in (slice "primary" "secondary" "text") $variant) -}}
+  {{- $variant = "primary" -}}
+{{- end -}}
+{{- if and $href $text -}}
+  <a class="button button--{{ $variant }}" href="{{ $href }}">{{ $text }}</a>
+{{- else -}}
+  <span class="component-placeholder component-placeholder--inline">Button link to be confirmed</span>
+{{- end -}}

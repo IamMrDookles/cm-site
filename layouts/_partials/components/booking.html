@@ -1,0 +1,14 @@
+{{- $booking := site.Params.booking -}}
+<div class="booking-card">
+  {{- if and $booking.enabled $booking.url }}
+    <div class="booking-card__content">
+      <h3>Book a consultation</h3>
+      <p>Choose a suitable time using the secure booking service.</p>
+    </div>
+    <div class="booking-card__action">
+      {{ partial "components/button.html" (dict "href" $booking.url "text" "Book now" "variant" "primary") }}
+    </div>
+  {{- else }}
+    <div class="component-placeholder component-placeholder--block">Online booking details will be added here.</div>
+  {{- end }}
+</div>

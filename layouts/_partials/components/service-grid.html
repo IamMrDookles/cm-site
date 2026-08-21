@@ -1,0 +1,24 @@
+{{- $items := hugo.Data.services -}}
+{{- if .Featured -}}
+  {{- $items = where $items "featured" true -}}
+{{- end -}}
+{{- if $items -}}
+  <div class="service-grid{{ if .Featured }} service-grid--featured{{ end }}">
+    {{- range $items }}
+      <article class="service-card"{{ with .id }} id="service-{{ . | anchorize }}"{{ end }}>
+        {{- with .title }}
+          <h3 class="service-card__title">{{ . }}</h3>
+        {{- else }}
+          <p class="component-placeholder">Service title to be confirmed</p>
+        {{- end }}
+        {{- with .summary }}
+          <p>{{ . }}</p>
+        {{- else }}
+          <p class="component-placeholder">Service information to be added.</p>
+        {{- end }}
+      </article>
+    {{- end }}
+  </div>
+{{- else }}
+  <div class="component-placeholder component-placeholder--block">Service information will be added here.</div>
+{{- end }}

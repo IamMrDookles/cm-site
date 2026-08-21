@@ -1,0 +1,13 @@
+{{- range strings.Split .Inner "|||" -}}
+  {{- if strings.HasPrefix . "CM_COMPONENT:" -}}
+    {{- $key := strings.TrimPrefix "CM_COMPONENT:" . -}}
+    {{- with $.Store.Get $key -}}
+      {{ . }}
+    {{- end -}}
+  {{- else -}}
+    {{- $markdown := . | strings.TrimSpace -}}
+    {{- with $markdown -}}
+      {{ . | $.Page.RenderString }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,21 @@
+{{- $label := .label | default "Media to be added" -}}
+{{- $ratio := .ratio | default "16 / 9" -}}
+{{- $ratioClass := "16-9" -}}
+{{- if eq $ratio "4 / 5" -}}
+  {{- $ratioClass = "4-5" -}}
+{{- else if eq $ratio "16 / 10" -}}
+  {{- $ratioClass = "16-10" -}}
+{{- else if eq $ratio "5 / 1" -}}
+  {{- $ratioClass = "5-1" -}}
+{{- else if eq $ratio "1 / 1" -}}
+  {{- $ratioClass = "1-1" -}}
+{{- else if eq $ratio "3 / 2" -}}
+  {{- $ratioClass = "3-2" -}}
+{{- end -}}
+<div
+  class="media-placeholder media-placeholder--{{ $ratioClass }}"
+  role="img"
+  aria-label="{{ $label }} — placeholder"
+>
+  <span class="media-placeholder__label" aria-hidden="true">{{ $label }}</span>
+</div>

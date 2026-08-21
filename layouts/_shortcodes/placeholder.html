@@ -1,0 +1,5 @@
+{{- $output := partial "components/placeholder.html" (dict
+  "Label" (.Get "label")
+  "Ratio" (.Get "ratio")
+) -}}
+{{ partial "components/shortcode-output.html" (dict "Parent" .Parent "Ordinal" .Ordinal "Output" $output) }}

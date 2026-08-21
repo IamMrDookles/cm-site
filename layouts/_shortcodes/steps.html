@@ -1,0 +1,5 @@
+{{- $output := partial "components/steps.html" (dict
+  "Page" .Page
+  "Param" (.Get "param")
+) -}}
+{{ partial "components/shortcode-output.html" (dict "Parent" .Parent "Ordinal" .Ordinal "Output" $output) }}

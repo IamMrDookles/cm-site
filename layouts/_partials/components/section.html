@@ -1,0 +1,25 @@
+{{- $tone := .Tone | default "default" -}}
+{{- $width := .Width | default "narrow" -}}
+{{- if not (in (slice "default" "sage" "warm") $tone) -}}
+  {{- $tone = "default" -}}
+{{- end -}}
+{{- if not (in (slice "narrow" "wide") $width) -}}
+  {{- $width = "narrow" -}}
+{{- end -}}
+{{- $id := .ID -}}
+{{- $inner := .Inner | strings.TrimSpace -}}
+<section class="content-section content-section--{{ $tone }}"{{ with $id }} id="{{ . | anchorize }}"{{ end }}>
+  <div class="container content-section__inner{{ if eq $width "narrow" }} narrow{{ else }} content-section__inner--wide{{ end }}">
+    <div class="content-section__content prose">
+      {{- with $inner }}
+        {{ partial "components/render-inner.html" (dict
+          "Page" $.Page
+          "Store" $.Store
+          "Inner" .
+        ) }}
+      {{- else }}
+        <p class="component-placeholder">Section content to be added.</p>
+      {{- end }}
+    </div>
+  </div>
+</section>

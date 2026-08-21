@@ -1,0 +1,26 @@
+{{- $items := slice -}}
+{{- if .Param -}}
+  {{- with index .Page.Params .Param -}}
+    {{- $items = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if $items -}}
+  <div class="card-grid">
+    {{- range $items }}
+      <article class="info-card">
+        {{- with .title }}
+          <h3 class="info-card__title">{{ . }}</h3>
+        {{- else }}
+          <p class="component-placeholder">Card title to be confirmed</p>
+        {{- end }}
+        {{- with .text }}
+          <p>{{ . }}</p>
+        {{- else }}
+          <p class="component-placeholder">Card copy to be added.</p>
+        {{- end }}
+      </article>
+    {{- end }}
+  </div>
+{{- else }}
+  <div class="component-placeholder component-placeholder--block">Card content will be added here.</div>
+{{- end }}

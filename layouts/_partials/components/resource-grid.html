@@ -1,0 +1,34 @@
+{{- $items := hugo.Data.resources -}}
+{{- if $items -}}
+  <div class="resource-grid">
+    {{- range $items }}
+      {{- $url := .url -}}
+      <article class="resource-card{{ if .featured }} resource-card--featured{{ end }}">
+        {{- with .type }}
+          <p class="resource-card__type">{{ . }}</p>
+        {{- end }}
+        {{- with .title }}
+          <h3 class="resource-card__title">
+            {{- if $url -}}
+              <a href="{{ $url }}">{{ . }}</a>
+            {{- else -}}
+              {{ . }}
+            {{- end -}}
+          </h3>
+        {{- else }}
+          <p class="component-placeholder">Resource title to be confirmed</p>
+        {{- end }}
+        {{- with .summary }}
+          <p>{{ . }}</p>
+        {{- else }}
+          <p class="component-placeholder">Resource summary to be added.</p>
+        {{- end }}
+        {{- if not $url }}
+          <p class="component-placeholder">Resource link to be confirmed</p>
+        {{- end }}
+      </article>
+    {{- end }}
+  </div>
+{{- else }}
+  <div class="component-placeholder component-placeholder--block">Resources will be added here.</div>
+{{- end }}

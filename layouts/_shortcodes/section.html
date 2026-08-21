@@ -1,0 +1,12 @@
+{{- $tone := .Get "tone" -}}
+{{- if not $tone -}}
+  {{- $tone = .Get "style" -}}
+{{- end -}}
+{{ partial "components/section.html" (dict
+  "Page" .Page
+  "Store" .Store
+  "Inner" .Inner
+  "Tone" $tone
+  "Width" (.Get "width")
+  "ID" (.Get "id")
+) }}

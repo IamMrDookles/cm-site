@@ -1,0 +1,35 @@
+{{- $position := .MediaPosition | default "right" -}}
+{{- if not (in (slice "left" "right") $position) -}}
+  {{- $position = "right" -}}
+{{- end -}}
+{{- $inner := .Inner | strings.TrimSpace -}}
+<div class="split split--media-{{ $position }}">
+  <div class="split__content">
+    {{- with .Title }}
+      <h2>{{ . }}</h2>
+    {{- else }}
+      <p class="component-placeholder">Section heading to be added.</p>
+    {{- end }}
+    {{- with $inner }}
+      <div class="split__prose">
+        {{ partial "components/render-inner.html" (dict
+          "Page" $.Page
+          "Store" $.Store
+          "Inner" .
+        ) }}
+      </div>
+    {{- else }}
+      <p class="component-placeholder">Section copy to be added.</p>
+    {{- end }}
+  </div>
+  <div class="split__media">
+    {{ partial "media/image.html" (dict
+      "Page" .Page
+      "src" .Image
+      "alt" .Alt
+      "label" .Label
+      "ratio" .Ratio
+      "sizes" "(max-width: 60rem) 100vw, 45vw"
+    ) }}
+  </div>
+</div>

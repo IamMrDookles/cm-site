@@ -1,14 +1,35 @@
 baseURL = 'https://www.cerimackenzie.com/'
-locale = 'en-gb'
+locale = 'en-GB'
 title = 'Ceri Mackenzie Hypnotherapy'
 disableKinds = ['taxonomy', 'term']
 
-[menus]
+[params]
+  author = 'Ceri Mackenzie'
+  description = 'Warm, personalised hypnotherapy in Cambridgeshire and online, supporting people worldwide with thoughts, feelings, behaviours and habits.'
+  tagline = 'Feel better. Think differently. Move forward.'
 
-  [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 10
+  [params.contact]
+    phone = ''
+    email = ''
+    location = 'Cambridgeshire, UK'
+    hours = ''
+    serviceArea = 'Working with individuals and organisations worldwide'
+
+  [params.booking]
+    enabled = false
+    url = ''
+    embed = false
+
+  [params.contactForm]
+    enabled = false
+    endpoint = ''
+
+  [params.socials]
+    facebook = ''
+    instagram = ''
+    linkedin = ''
+
+[menus]
 
   [[menus.main]]
     name = 'About'
@@ -16,14 +37,40 @@ disableKinds = ['taxonomy', 'term']
     weight = 20
 
   [[menus.main]]
-    name = 'Resources'
-    pageRef = '/resources'
+    name = 'Hypnotherapy'
+    pageRef = '/hypnotherapy'
     weight = 30
 
   [[menus.main]]
-    name = 'Contact'
-    pageRef = '/contact'
+    name = 'How I Can Help'
+    pageRef = '/how-i-can-help'
     weight = 40
+
+  [[menus.main]]
+    name = 'First Session'
+    pageRef = '/your-first-session'
+    weight = 50
+
+  [[menus.main]]
+    name = 'Fees & Bookings'
+    pageRef = '/fees-and-bookings'
+    weight = 60
+
+  [[menus.main]]
+    name = 'FAQs'
+    pageRef = '/faq'
+    weight = 70
+
+  [[menus.main]]
+    name = 'Resources'
+    pageRef = '/resources'
+    weight = 80
+
+  [[menus.main]]
+    name = 'Book a consultation'
+    pageRef = '/contact'
+    weight = 90
+    params = { cta = true }
 
 [privacy]
   [privacy.youTube]

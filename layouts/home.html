@@ -1,31 +1,45 @@
 {{ define "main" }}
+  {{- $hero := .Params.heroCta -}}
+  {{- $heroLabel := .Params.heroLabel | default "Portrait of Ceri Mackenzie" -}}
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        {{- with .Params.eyebrow }}
+          <p class="eyebrow">{{ . }}</p>
+        {{- end }}
 
-<section class="hero">
-  <div class="container hero-inner">
+        <h1 class="display-title">{{ .Title }}</h1>
 
-    <p class="eyebrow">Welcome</p>
+        {{- with .Params.intro }}
+          <p class="hero__intro">{{ . }}</p>
+        {{- else }}
+          <p class="component-placeholder">Homepage introduction to be added.</p>
+        {{- end }}
 
-    <h1>{{ .Title }}</h1>
+        <div class="hero__actions">
+          {{ partial "components/button.html" (dict
+            "href" $hero.href
+            "text" $hero.label
+            "variant" "primary"
+          ) }}
+        </div>
+      </div>
 
-    <div class="intro">
-      {{ .Content }}
+      <div class="hero__media">
+        {{ partial "media/image.html" (dict
+          "Page" .
+          "src" .Params.heroImage
+          "alt" .Params.heroImageAlt
+          "label" $heroLabel
+          "ratio" "4 / 5"
+          "loading" "eager"
+          "sizes" "(max-width: 60rem) 100vw, 42vw"
+        ) }}
+      </div>
     </div>
+  </section>
 
-    <a class="button" href="#about">Find out more</a>
-
+  <div class="home-content">
+    {{ .Content }}
   </div>
-</section>
-
-<section class="section" id="about">
-  <div class="container narrow">
-
-    <h2>About this site</h2>
-
-    <p>
-      🚧Under construction🚧.
-    </p>
-
-  </div>
-</section>
-
 {{ end }}

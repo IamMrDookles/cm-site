@@ -1,33 +1,17 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="{{ site.Language.Locale | default "en-GB" }}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>
-    {{ if .IsHome }}
-      {{ site.Title }}
-    {{ else }}
-      {{ .Title }} | {{ site.Title }}
-    {{ end }}
-  </title>
-
-  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  {{ partial "head.html" . }}
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-{{ partial "header.html" . }}
+  {{ partial "header.html" . }}
 
-  <main>
+  <main id="main-content" class="site-main" tabindex="-1">
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; {{ now.Year }} {{ site.Title }}</p>
-    </div>
-  </footer>
-
+  {{ partial "footer.html" . }}
 </body>
 </html>

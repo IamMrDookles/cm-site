@@ -1,0 +1,98 @@
+- id: anxiety-stress
+  title: "Anxiety & stress"
+  summary: >-
+    When your mind constantly feels switched on, it can be difficult to relax,
+    sleep or enjoy everyday life. Hypnotherapy may help you develop more helpful
+    responses to anxious thoughts and situations.
+  featured: true
+  detailed: true
+
+- id: confidence-self-esteem
+  title: "Confidence & self-esteem"
+  summary: >-
+    Self-doubt can affect everything from relationships and work to social
+    situations and the decisions you make. We can work on the thoughts and
+    patterns that undermine your confidence and develop a more positive
+    relationship with yourself.
+  featured: true
+  detailed: true
+
+- id: fears-phobias
+  title: "Fears & phobias"
+  summary: >-
+    Some fears can feel completely disproportionate to the situation, yet
+    knowing that logically doesn't necessarily make them disappear.
+    Hypnotherapy can be used as part of an approach to reducing the emotional
+    response associated with particular fears and phobias.
+  featured: true
+  detailed: true
+
+- id: unwanted-habits
+  title: "Unwanted habits"
+  summary: >-
+    Habits can become automatic. Whether it's something you do when you're
+    stressed, bored or tired, changing an established pattern can be difficult.
+    Hypnotherapy can help you understand and interrupt those patterns.
+  featured: true
+  detailed: true
+
+- id: sleep
+  title: "Sleep"
+  summary: >-
+    When your mind won't switch off, getting a good night's sleep can become a
+    frustrating cycle. Hypnotherapy may help you develop a calmer bedtime
+    routine and change unhelpful thoughts and associations around sleep.
+  featured: true
+  detailed: true
+
+- id: smoking-cessation
+  title: "Smoking cessation"
+  summary: >-
+    If you're ready to stop smoking, hypnotherapy may be one tool that can
+    support you. The focus is on helping you change the associations, habits and
+    thought patterns surrounding smoking.
+  featured: false
+  detailed: true
+
+- id: weight-management
+  title: "Weight management"
+  summary: >-
+    Sustainable weight management is about more than willpower. Hypnotherapy can
+    be used to explore behaviours, habits and emotional triggers around food and
+    support healthier choices.
+  featured: false
+  detailed: true
+
+- id: exam-performance-anxiety
+  title: "Exam & performance anxiety"
+  summary: >-
+    Support for managing anxious thoughts and building a calmer, more focused
+    response before exams, auditions, interviews and other high-pressure
+    situations.
+  featured: true
+  detailed: false
+
+- id: public-speaking
+  title: "Public speaking"
+  summary: >-
+    Work with the thoughts and physical responses that can make speaking in
+    front of others feel overwhelming, and build confidence for presentations
+    and conversations.
+  featured: false
+  detailed: false
+
+- id: motivation-mindset
+  title: "Motivation & mindset"
+  summary: >-
+    Explore the patterns that keep you stuck and develop a clearer, more
+    constructive approach to goals and change.
+  featured: false
+  detailed: false
+
+- id: relaxation-emotional-wellbeing
+  title: "Relaxation & emotional wellbeing"
+  summary: >-
+    Create space to slow down, manage everyday pressure and practise calmer ways
+    of responding.
+  featured: false
+  detailed: false

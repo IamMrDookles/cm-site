@@ -1,0 +1,29 @@
+{{- $items := hugo.Data.testimonials -}}
+{{- if $items -}}
+  <div class="testimonial-grid">
+    {{- range $items }}
+      {{- if .quote }}
+        <figure class="testimonial-card">
+          <blockquote>
+            <p>{{ .quote }}</p>
+          </blockquote>
+          <figcaption>
+            {{- with (.name | default .attribution) -}}
+              {{ . }}
+            {{- else -}}
+              <span class="component-placeholder">Client attribution to be confirmed</span>
+            {{- end -}}
+          </figcaption>
+        </figure>
+      {{- else }}
+        <div class="component-placeholder component-placeholder--block">Testimonial copy to be added.</div>
+      {{- end }}
+    {{- end }}
+  </div>
+{{- else }}
+  <div class="testimonial-grid testimonial-grid--placeholder">
+    {{- range seq 3 }}
+      <div class="component-placeholder component-placeholder--block">Client feedback will be added here.</div>
+    {{- end }}
+  </div>
+{{- end }}

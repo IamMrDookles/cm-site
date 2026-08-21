@@ -1,0 +1,6 @@
+{{- $output := partial "components/button.html" (dict
+  "href" (.Get "href")
+  "text" (.Get "text")
+  "variant" (.Get "variant")
+) -}}
+{{ partial "components/shortcode-output.html" (dict "Parent" .Parent "Ordinal" .Ordinal "Output" $output) }}

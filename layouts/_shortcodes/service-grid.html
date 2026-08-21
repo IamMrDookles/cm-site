@@ -1,0 +1,3 @@
+{{- $featured := eq (lower (.Get "featured")) "true" -}}
+{{- $output := partial "components/service-grid.html" (dict "Featured" $featured) -}}
+{{ partial "components/shortcode-output.html" (dict "Parent" .Parent "Ordinal" .Ordinal "Output" $output) }}

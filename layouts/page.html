@@ -1,23 +1,21 @@
 {{ define "main" }}
+  <article class="page">
+    <header class="page-header">
+      <div class="container narrow page-header__inner">
+        {{- with .Params.eyebrow }}
+          <p class="eyebrow">{{ . }}</p>
+        {{- end }}
 
-<article class="page">
+        <h1 class="page-title">{{ .Title }}</h1>
 
-  <header class="page-header">
-    <div class="container narrow">
+        {{- with .Params.intro }}
+          <p class="page-intro">{{ . }}</p>
+        {{- end }}
+      </div>
+    </header>
 
-      <h1>{{ .Title }}</h1>
-
-      {{ with .Params.intro }}
-        <p class="page-intro">{{ . }}</p>
-      {{ end }}
-
+    <div class="page-content">
+      {{ .Content }}
     </div>
-  </header>
-
-  <div class="container narrow prose">
-    {{ .Content }}
-  </div>
-
-</article>
-
+  </article>
 {{ end }}

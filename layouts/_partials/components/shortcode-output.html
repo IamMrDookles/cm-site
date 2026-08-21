@@ -1,0 +1,7 @@
+{{- if .Parent -}}
+  {{- $key := printf "cm-component-%d" .Ordinal -}}
+  {{- .Parent.Store.Set $key .Output -}}
+  {{- printf "\n\n|||CM_COMPONENT:%s|||\n\n" $key -}}
+{{- else -}}
+  {{- .Output -}}
+{{- end -}}

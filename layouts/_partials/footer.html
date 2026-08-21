@@ -1,0 +1,88 @@
+{{- $contact := site.Params.contact -}}
+{{- $socials := site.Params.socials -}}
+{{- $credentials := hugo.Data.credentials -}}
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="site-footer__title" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+      {{- with site.Params.tagline }}
+        <p>{{ . }}</p>
+      {{- else }}
+        <p class="component-placeholder">Site description to be added.</p>
+      {{- end }}
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer navigation">
+      <h2 class="site-footer__heading">Pages</h2>
+      <ul>
+        <li><a href="{{ site.Home.RelPermalink }}">Home</a></li>
+        {{- range site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+
+    <section class="site-footer__contact" aria-labelledby="footer-contact-heading">
+      <h2 class="site-footer__heading" id="footer-contact-heading">Contact</h2>
+      <ul>
+        <li>
+          {{- with $contact.phone }}
+            <a href="tel:{{ replaceRE `[^0-9+]` `` . }}">{{ . }}</a>
+          {{- else }}
+            <span class="component-placeholder">Phone number to be confirmed</span>
+          {{- end }}
+        </li>
+        <li>
+          {{- with $contact.email }}
+            <a href="mailto:{{ . }}">{{ . }}</a>
+          {{- else }}
+            <span class="component-placeholder">Email address to be confirmed</span>
+          {{- end }}
+        </li>
+        <li>
+          {{- with $contact.location }}
+            <span>{{ . }}</span>
+          {{- else }}
+            <span class="component-placeholder">Location to be confirmed</span>
+          {{- end }}
+        </li>
+      </ul>
+    </section>
+
+    <section class="site-footer__trust" aria-labelledby="footer-trust-heading">
+      <h2 class="site-footer__heading" id="footer-trust-heading">Professional standards</h2>
+      {{- if $credentials }}
+        <ul class="site-footer__credentials">
+          {{- range $credentials }}
+            <li>{{ .name | default .title | default "Credential details to be confirmed" }}</li>
+          {{- end }}
+        </ul>
+      {{- else }}
+        <p class="component-placeholder">Accreditations and memberships to be added.</p>
+      {{- end }}
+    </section>
+  </div>
+
+  <div class="container site-footer__meta">
+    <div class="site-footer__socials" aria-label="Social media">
+      {{- $hasSocial := false -}}
+      {{- range $name, $url := $socials -}}
+        {{- if $url -}}
+          {{- $hasSocial = true -}}
+          <a href="{{ $url }}" rel="me">{{ $name | title }}</a>
+        {{- end -}}
+      {{- end -}}
+      {{- if not $hasSocial }}
+        <span class="component-placeholder">Social links to be added.</span>
+      {{- end }}
+    </div>
+
+    <div class="site-footer__legal" aria-label="Legal information">
+      <span class="component-placeholder">Privacy policy to be added</span>
+      <span class="component-placeholder">Cookie policy to be added</span>
+      <span class="component-placeholder">Terms and conditions to be added</span>
+    </div>
+
+    <p class="site-footer__copyright">&copy; {{ now.Year }} {{ site.Title }}. All rights reserved.</p>
+  </div>
+</footer>

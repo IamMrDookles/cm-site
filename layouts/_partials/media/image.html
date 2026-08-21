@@ -1,0 +1,75 @@
+{{- $page := .Page -}}
+{{- $src := .src -}}
+{{- $label := .label | default "Image to be added" -}}
+{{- $alt := .alt | default $label -}}
+{{- $ratio := .ratio | default "16 / 9" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $sizes := .sizes | default "(max-width: 60rem) 100vw, 50vw" -}}
+{{- $ratioClass := "16-9" -}}
+{{- if eq $ratio "4 / 5" -}}
+  {{- $ratioClass = "4-5" -}}
+{{- else if eq $ratio "16 / 10" -}}
+  {{- $ratioClass = "16-10" -}}
+{{- else if eq $ratio "5 / 1" -}}
+  {{- $ratioClass = "5-1" -}}
+{{- else if eq $ratio "1 / 1" -}}
+  {{- $ratioClass = "1-1" -}}
+{{- else if eq $ratio "3 / 2" -}}
+  {{- $ratioClass = "3-2" -}}
+{{- end -}}
+{{- if ne $loading "eager" -}}
+  {{- $loading = "lazy" -}}
+{{- end -}}
+
+{{- $resource := .Resource -}}
+{{- if and (not $resource) $src $page -}}
+  {{- $resource = $page.Resources.GetMatch $src -}}
+{{- end -}}
+{{- if and (not $resource) $src -}}
+  {{- $resource = resources.Get (strings.TrimPrefix "/" $src) -}}
+{{- end -}}
+
+{{- if and $resource (eq $resource.MediaType.MainType "image") -}}
+  {{- $canProcess := in (slice "jpeg" "png" "webp" "gif" "tiff") $resource.MediaType.SubType -}}
+  {{- if $canProcess -}}
+    {{- $originalSet := slice -}}
+    {{- $webpSet := slice -}}
+    {{- range slice 480 768 1200 1600 -}}
+      {{- if lt . $resource.Width -}}
+        {{- $originalVariant := $resource.Resize (printf "%dx" .) -}}
+        {{- $webpVariant := $resource.Resize (printf "%dx webp q82" .) -}}
+        {{- $originalSet = $originalSet | append (printf "%s %dw" $originalVariant.RelPermalink $originalVariant.Width) -}}
+        {{- $webpSet = $webpSet | append (printf "%s %dw" $webpVariant.RelPermalink $webpVariant.Width) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $webpFull := $resource.Resize (printf "%dx webp q82" $resource.Width) -}}
+    {{- $originalSet = $originalSet | append (printf "%s %dw" $resource.RelPermalink $resource.Width) -}}
+    {{- $webpSet = $webpSet | append (printf "%s %dw" $webpFull.RelPermalink $webpFull.Width) -}}
+    <picture class="responsive-media responsive-media--{{ $ratioClass }}">
+      <source type="image/webp" srcset="{{ delimit $webpSet ", " }}" sizes="{{ $sizes }}">
+      <img
+        src="{{ $resource.RelPermalink }}"
+        srcset="{{ delimit $originalSet ", " }}"
+        sizes="{{ $sizes }}"
+        width="{{ $resource.Width }}"
+        height="{{ $resource.Height }}"
+        alt="{{ $alt }}"
+        loading="{{ $loading }}"
+        decoding="async"
+        {{- if eq $loading "eager" }} fetchpriority="high"{{ end }}
+      >
+    </picture>
+  {{- else -}}
+    <picture class="responsive-media responsive-media--{{ $ratioClass }}">
+      <img
+        src="{{ $resource.RelPermalink }}"
+        alt="{{ $alt }}"
+        loading="{{ $loading }}"
+        decoding="async"
+        {{- if eq $loading "eager" }} fetchpriority="high"{{ end }}
+      >
+    </picture>
+  {{- end -}}
+{{- else -}}
+  {{ partial "media/placeholder.html" (dict "label" $label "ratio" $ratio) }}
+{{- end -}}

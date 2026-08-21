@@ -1,33 +1,37 @@
-<header class="site-header">
-
+<header class="site-header" data-site-header>
   <div class="container header-inner">
-
-    <a class="site-title" href="{{ "/" | relURL }}">
-      {{ site.Title }}
+    <a class="site-title" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} — Home">
+      <span class="site-title__name">Ceri Mackenzie</span>
+      <span class="site-title__descriptor">Hypnotherapy</span>
     </a>
 
-    <nav class="site-nav" aria-label="Main navigation">
-      <ul>
+    <button
+      class="site-nav__toggle"
+      type="button"
+      aria-label="Open main menu"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      data-nav-toggle
+      hidden
+    >
+      <span class="site-nav__toggle-label">Menu</span>
+      <span class="site-nav__toggle-icon" aria-hidden="true"></span>
+    </button>
 
-        {{ range site.Menus.main }}
-
-          <li>
+    <nav class="site-nav" id="primary-navigation" aria-label="Main navigation" data-site-nav>
+      <ul class="site-nav__list">
+        {{- range site.Menus.main }}
+          {{- $active := or ($.IsMenuCurrent .Menu .) ($.HasMenuCurrent .Menu .) }}
+          {{- $cta := and .Params (index .Params "cta") }}
+          <li class="site-nav__item">
             <a
+              class="site-nav__link{{ if $active }} is-active{{ end }}{{ if $cta }} site-nav__link--cta{{ end }}"
               href="{{ .URL }}"
-              {{ if $.IsMenuCurrent .Menu . }}
-                class="active"
-                aria-current="page"
-              {{ end }}
-            >
-              {{ .Name }}
-            </a>
+              {{- if $active }} aria-current="page"{{ end }}
+            >{{ .Name }}</a>
           </li>
-
-        {{ end }}
-
+        {{- end }}
       </ul>
     </nav>
-
   </div>
-
 </header>

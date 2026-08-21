@@ -1,0 +1,38 @@
+{{- $items := slice -}}
+{{- if .Param -}}
+  {{- with index .Page.Params .Param -}}
+    {{- $items = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if $items -}}
+  <div class="fee-grid">
+    {{- range $items }}
+      <article class="fee-card">
+        {{- with .title }}
+          <h3 class="fee-card__title">{{ . }}</h3>
+        {{- else }}
+          <p class="component-placeholder">Session name to be confirmed</p>
+        {{- end }}
+        <div class="fee-card__meta">
+          {{- with .price }}
+            <span class="fee-card__price">{{ . }}</span>
+          {{- else }}
+            <span class="component-placeholder">Price to be confirmed</span>
+          {{- end }}
+          {{- with .duration }}
+            <span class="fee-card__duration">{{ . }}</span>
+          {{- else }}
+            <span class="component-placeholder">Duration to be confirmed</span>
+          {{- end }}
+        </div>
+        {{- with .text }}
+          <p>{{ . }}</p>
+        {{- else }}
+          <p class="component-placeholder">Session details to be added.</p>
+        {{- end }}
+      </article>
+    {{- end }}
+  </div>
+{{- else }}
+  <div class="component-placeholder component-placeholder--block">Session fees will be added here.</div>
+{{- end }}

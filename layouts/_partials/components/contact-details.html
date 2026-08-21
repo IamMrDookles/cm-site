@@ -1,0 +1,55 @@
+{{- $contact := site.Params.contact -}}
+<address class="contact-details">
+  <dl class="contact-details__list">
+    <div class="contact-details__item">
+      <dt>Phone</dt>
+      <dd>
+        {{- with $contact.phone }}
+          <a href="tel:{{ replaceRE `[^0-9+]` `` . }}">{{ . }}</a>
+        {{- else }}
+          <span class="component-placeholder">Phone number to be confirmed</span>
+        {{- end }}
+      </dd>
+    </div>
+    <div class="contact-details__item">
+      <dt>Email</dt>
+      <dd>
+        {{- with $contact.email }}
+          <a href="mailto:{{ . }}">{{ . }}</a>
+        {{- else }}
+          <span class="component-placeholder">Email address to be confirmed</span>
+        {{- end }}
+      </dd>
+    </div>
+    <div class="contact-details__item">
+      <dt>Location</dt>
+      <dd>
+        {{- with $contact.location }}
+          {{ . }}
+        {{- else }}
+          <span class="component-placeholder">Location to be confirmed</span>
+        {{- end }}
+      </dd>
+    </div>
+    <div class="contact-details__item">
+      <dt>Opening hours</dt>
+      <dd>
+        {{- with $contact.hours }}
+          {{ . }}
+        {{- else }}
+          <span class="component-placeholder">Opening hours to be confirmed</span>
+        {{- end }}
+      </dd>
+    </div>
+    <div class="contact-details__item contact-details__item--wide">
+      <dt>Sessions</dt>
+      <dd>
+        {{- with $contact.servicearea }}
+          {{ . }}
+        {{- else }}
+          <span class="component-placeholder">In-person and online availability to be confirmed</span>
+        {{- end }}
+      </dd>
+    </div>
+  </dl>
+</address>

@@ -1,0 +1,27 @@
+{{- $items := slice -}}
+{{- if .Param -}}
+  {{- with index .Page.Params .Param -}}
+    {{- $items = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if $items -}}
+  <div class="faq-list">
+    {{- range $items }}
+      {{- if and .question .answer }}
+        <details class="faq-list__item">
+          <summary class="faq-list__question">
+            <span>{{ .question }}</span>
+            <span class="faq-list__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-list__answer">
+            <p>{{ .answer }}</p>
+          </div>
+        </details>
+      {{- else }}
+        <div class="component-placeholder component-placeholder--block">FAQ entry to be completed.</div>
+      {{- end }}
+    {{- end }}
+  </div>
+{{- else }}
+  <div class="component-placeholder component-placeholder--block">Frequently asked questions will be added here.</div>
+{{- end }}

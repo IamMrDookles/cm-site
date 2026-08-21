@@ -1,0 +1,19 @@
+{{- $hasCopy := or .Title .Text -}}
+<section class="cta-banner" aria-label="Next step">
+  <div class="container cta-banner__inner">
+    <div class="cta-banner__content">
+      {{- with .Title }}
+        <h2>{{ . }}</h2>
+      {{- end }}
+      {{- with .Text }}
+        <p>{{ . }}</p>
+      {{- end }}
+      {{- if not $hasCopy }}
+        <p class="component-placeholder">Call-to-action copy to be added.</p>
+      {{- end }}
+    </div>
+    <div class="cta-banner__action">
+      {{ partial "components/button.html" (dict "href" .Href "text" .Label "variant" "primary") }}
+    </div>
+  </div>
+</section>
