@@ -17,6 +17,10 @@ Run the same strict checks used by deployment with:
 hugo --gc --minify --panicOnWarning --printPathWarnings --printUnusedTemplates
 ```
 
+For step-by-step instructions for adding pages, using the site's reusable
+components, replacing images, changing fonts, and publishing changes, see the
+[site maintenance guide](docs/site-maintenance.md).
+
 ## Content and shared data
 
 - Editorial copy lives in `content/`.
