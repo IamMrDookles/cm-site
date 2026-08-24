@@ -10,7 +10,7 @@ faqs:
     answer: "Many people can experience hypnosis, although it varies from person to person. A willingness to take part and engage with the process is important. Ceri will discuss suitability with you."
   - question: "Will I lose control?"
     answer: "No. You remain able to choose what you do, communicate and ask to stop. Hypnotherapy is a collaborative process."
-  - question: "What if I cannot relax?"
+  - question: "What if I can't relax?"
     answer: "That is completely okay. You do not need to reach a perfect state of relaxation or have a particular kind of personality. Ceri will guide you at your own pace."
   - question: "How quickly will I notice a change?"
     answer: "Everyone is different. Some people notice changes sooner than others, and no particular result can be guaranteed. Ceri will discuss realistic expectations and review progress with you."

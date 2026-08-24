@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "Fraunces";
+  font-family: "Cormorant Garamond";
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400 600;
   font-display: swap;
-  src: url("../fonts/fraunces-latin-variable.woff2") format("woff2");
+  src: url("../fonts/cormorant-garamond-latin-variable.woff2") format("woff2");
 }
 
 @font-face {
@@ -29,7 +29,7 @@
   --colour-white: #fff;
   --colour-focus: #9b6138;
 
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --container: 75rem;
@@ -545,9 +545,15 @@ hr {
 
 .hero h1,
 .hero__title {
-  max-width: 12ch;
+  max-width: none;
   margin-bottom: var(--space-md);
-  font-size: var(--step-5);
+  font-size: clamp(3.25rem, 2.25rem + 3.85vw, 6.25rem);
+  line-height: 0.92;
+}
+
+.display-title__line {
+  display: block;
+  white-space: nowrap;
 }
 
 .eyebrow {
@@ -963,6 +969,21 @@ hr {
   counter-increment: process;
 }
 
+.steps-list__item {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  row-gap: 0.65rem;
+}
+
+.steps-list > .steps-list__item {
+  margin-top: 0;
+}
+
+.steps-list__content {
+  display: contents;
+}
+
 .step::before,
 .process-step::before,
 .timeline__item::before {
@@ -996,9 +1017,12 @@ hr {
 
 .step > * + *,
 .process-step > * + *,
-.timeline__item > * + *,
-.steps-list__content > * + * {
+.timeline__item > * + * {
   margin-top: 0.65rem;
+}
+
+.steps-list__content > * + * {
+  margin-top: 0;
 }
 
 .step p,
@@ -1741,7 +1765,7 @@ hr {
 
   .hero h1,
   .hero__title {
-    font-size: clamp(3.1rem, 16vw, 4.5rem);
+    font-size: clamp(2.2rem, 12.5vw, 4.5rem);
   }
 
   .hero__actions,

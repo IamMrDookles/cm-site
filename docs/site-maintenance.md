@@ -554,9 +554,9 @@ the preview with `--disableFastRender`.
 
 ## Change a self-hosted Google Font
 
-The site currently uses Fraunces for display text and Source Sans 3 for body
+The site currently uses Cormorant Garamond for display text and Source Sans 3 for body
 text. Although both are available from Google Fonts, the live site does **not**
-contact Google's font CDN. WOFF2 files and their Open Font Licence files are
+contact Google's font CDN. The font files and their Open Font Licence files are
 stored in `static/fonts/` and served by this site.
 
 Changing a font involves its font file, licence, CSS declaration, and fallback

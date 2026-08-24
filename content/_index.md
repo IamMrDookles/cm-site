@@ -1,6 +1,10 @@
 ---
 title: "Feel better. Think differently. Move forward."
 description: "Personal, collaborative hypnotherapy with Ceri Mackenzie in Cambridgeshire and online worldwide."
+heroTitleLines:
+  - "Feel better."
+  - "Think differently."
+  - "Move forward."
 intro: "Sometimes, knowing what you should do isn't enough. Hypnotherapy can offer a different way forward."
 eyebrow: "Hypnotherapy with Ceri Mackenzie"
 heroLabel: "Portrait of Ceri Mackenzie"
@@ -9,9 +13,9 @@ heroCta:
   href: "#understanding"
 steps:
   - title: "Let's talk"
-    text: "We begin with a consultation so Ceri can understand what you would like help with and answer your questions."
+    text: "We begin with a consultation so I can understand what you would like help with and answer your questions."
   - title: "Understand the pattern"
-    text: "Together, you explore the thoughts, feelings and behaviours that may be keeping you stuck."
+    text: "Together, we explore the thoughts, feelings and behaviours that may be keeping you stuck."
   - title: "Begin making changes"
     text: "Hypnotherapy and techniques tailored to your goals can help you practise responding differently."
   - title: "Support lasting change"

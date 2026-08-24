@@ -8,7 +8,15 @@
           <p class="eyebrow">{{ . }}</p>
         {{- end }}
 
-        <h1 class="display-title">{{ .Title }}</h1>
+        <h1 class="display-title">
+          {{- with .Params.heroTitleLines }}
+            {{- range . }}
+              <span class="display-title__line">{{ . }}</span>
+            {{- end }}
+          {{- else }}
+            {{- $.Title -}}
+          {{- end }}
+        </h1>
 
         {{- with .Params.intro }}
           <p class="hero__intro">{{ . }}</p>

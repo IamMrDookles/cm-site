@@ -40,5 +40,5 @@ Add page-specific images to the corresponding page bundle and reference them in
 front matter. The image partial generates responsive variants; missing images
 render a neutral placeholder instead.
 
-Fraunces and Source Sans 3 are self-hosted in `static/fonts/`. Their Open Font
+Cormorant Garamond and Source Sans 3 are self-hosted in `static/fonts/`. Their Open Font
 Licence files are stored beside the font files.
