@@ -312,23 +312,6 @@ faqs:
 {{< faq param="faqs" >}}
 ```
 
-### `fees`
-
-Displays pricing cards from the current page's front matter. Entries use
-`title`, `price`, `duration`, and `text`.
-
-```yaml
-fees:
-  - title: "Initial consultation"
-    price: "£00"
-    duration: "00 minutes"
-    text: "A first conversation about your goals and questions."
-```
-
-```markdown
-{{< fees param="fees" >}}
-```
-
 ### `service-grid`
 
 Displays records from `data/services.yaml`; it does not read page front matter.
@@ -627,7 +610,7 @@ the site's privacy and performance policy is intentionally being changed.
 
 Placeholders are deliberate warnings, not build failures. Check the fields the
 component requires. For site-wide components, inspect `hugo.toml` or the
-relevant file under `data/`. For `card-grid`, `steps`, `faq`, and `fees`, check
+relevant file under `data/`. For `card-grid`, `steps`, and `faq`, check
 that `param` matches a populated front matter list. For buttons and CTAs, check
 both the URL and visible label.
 

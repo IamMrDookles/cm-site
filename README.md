@@ -1,4 +1,4 @@
-# Ceri Mackenzie Hypnotherapy
+# Ceri Mackenzie Psychotherapy & Hypnotherapy
 
 A custom Hugo site for `cerimackenzie.com`. The project deliberately uses no
 third-party theme, JavaScript framework, or Node build step.

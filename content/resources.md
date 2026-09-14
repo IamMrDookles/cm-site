@@ -8,7 +8,7 @@ eyebrow: "Learn at your own pace"
 {{< section tone="default" width="wide" >}}
 ## Featured resources
 
-This library will bring together useful introductions, videos and carefully selected reading. New resources will be added as they are reviewed.
+This library brings together useful introductions, videos and carefully selected reading. I will add new resources as I review them.
 
 {{< resource-grid >}}
 {{< /section >}}
@@ -16,7 +16,7 @@ This library will bring together useful introductions, videos and carefully sele
 {{< section tone="sage" width="narrow" >}}
 ## Looking for something specific?
 
-If you have a question that is not covered here, Ceri can discuss it with you before you book.
+If you have a question that is not covered here, I can discuss it with you before you book.
 
-{{< button href="/contact/" text="Ask Ceri a question" >}}
+{{< button href="/contact/" text="Ask me a question" >}}
 {{< /section >}}

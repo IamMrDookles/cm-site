@@ -1,1 +1,15 @@
-[]
+- type: "NHS overview"
+  title: "Cognitive behavioural therapy (CBT)"
+  summary: >-
+    An introduction to CBT and the connections between thoughts, feelings and
+    behaviour.
+  url: "https://www.nhs.uk/mental-health/talking-therapies-medicine-treatments/talking-therapies-and-counselling/cognitive-behavioural-therapy-cbt/overview/"
+  featured: true
+
+- type: "Research overview"
+  title: "The science of clinical hypnosis"
+  summary: >-
+    An American Psychological Association overview of focused attention in
+    hypnosis and the developing evidence for its clinical use.
+  url: "https://www.apa.org/topics/psychotherapy/hypnosis"
+  featured: true

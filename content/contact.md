@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-description: "Contact Ceri Mackenzie to ask a question or book a hypnotherapy consultation."
+description: "Contact me to ask a question or arrange a psychotherapy or psychological hypnotherapy consultation."
 intro: "You do not need to know exactly what you need before getting in touch."
 eyebrow: "Let's talk"
 ---
@@ -8,7 +8,7 @@ eyebrow: "Let's talk"
 {{< section tone="default" width="wide" >}}
 ## Get in touch
 
-If you are considering hypnotherapy and would like to discuss whether it could help, Ceri would be happy to hear from you.
+If you are considering psychotherapy or psychological hypnotherapy and would like to discuss whether my approach could help, I would be happy to hear from you.
 
 {{< contact-details >}}
 {{< /section >}}
@@ -16,7 +16,7 @@ If you are considering hypnotherapy and would like to discuss whether it could h
 {{< section tone="sage" width="wide" id="book" >}}
 ## Book a consultation
 
-Choose an available consultation time using the booking area below. Appointment and platform details will be confirmed before your session.
+Choose an available consultation time using the booking area below. I will confirm the appointment and platform details before your session.
 
 {{< booking >}}
 {{< /section >}}

@@ -1,11 +1,11 @@
 baseURL = 'https://www.cerimackenzie.com/'
 locale = 'en-GB'
-title = 'Ceri Mackenzie Hypnotherapy'
+title = 'Ceri Mackenzie Psychotherapy & Hypnotherapy'
 disableKinds = ['taxonomy', 'term']
 
 [params]
   author = 'Ceri Mackenzie'
-  description = 'Warm, personalised hypnotherapy in Cambridgeshire and online, supporting people worldwide with thoughts, feelings, behaviours and habits.'
+  description = 'Evidence-informed psychotherapy and psychological hypnotherapy rooted in psychological science and drawing on CBT.'
   tagline = 'Feel better. Think differently. Move forward.'
 
   [params.contact]
@@ -13,7 +13,7 @@ disableKinds = ['taxonomy', 'term']
     email = ''
     location = 'Cambridgeshire, UK'
     hours = ''
-    serviceArea = 'Working with individuals and organisations worldwide'
+    serviceArea = 'Psychotherapy and psychological hypnotherapy for individuals and organisations worldwide'
 
   [params.booking]
     enabled = false
@@ -32,7 +32,7 @@ disableKinds = ['taxonomy', 'term']
 [menus]
 
   [[menus.main]]
-    name = 'About'
+    name = 'About Me'
     pageRef = '/about'
     weight = 20
 
@@ -50,11 +50,6 @@ disableKinds = ['taxonomy', 'term']
     name = 'First Session'
     pageRef = '/your-first-session'
     weight = 50
-
-  [[menus.main]]
-    name = 'Fees & Bookings'
-    pageRef = '/fees-and-bookings'
-    weight = 60
 
   [[menus.main]]
     name = 'FAQs'

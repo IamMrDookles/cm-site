@@ -1,6 +1,7 @@
 ---
 title: "Fees and Bookings"
-description: "Find practical information about hypnotherapy appointments, fees, online sessions and booking with Ceri Mackenzie."
+draft: true
+description: "Practical information about my hypnotherapy appointments, fees, online sessions and booking."
 intro: "Clear information to help you decide on your next step."
 eyebrow: "Plan your appointment"
 fees:
@@ -21,21 +22,20 @@ fees:
 {{< section tone="default" width="wide" >}}
 ## Sessions and fees
 
-Final prices and appointment lengths will be added here once confirmed.
+I will add final prices and appointment lengths here once confirmed.
 
-{{< fees param="fees" >}}
 {{< /section >}}
 
 {{< section tone="sage" width="narrow" >}}
 ## Online sessions
 
-Ceri is based in Cambridgeshire and works with people online worldwide. Platform, timing and any practical requirements will be confirmed before the appointment.
+I'm based in Cambridgeshire and work with people online worldwide. I will confirm the platform, timing and any practical requirements before your appointment.
 {{< /section >}}
 
 {{< section tone="warm" width="wide" id="book" >}}
 ## Book your appointment
 
-Available consultation times and full booking details will appear here.
+I will publish available consultation times and full booking details here.
 
 {{< booking >}}
 {{< /section >}}
@@ -43,7 +43,7 @@ Available consultation times and full booking details will appear here.
 {{< section tone="default" width="narrow" >}}
 ## Cancellation policy
 
-The notice period and any cancellation fee will be published here before bookings open. You will be able to review the policy before confirming an appointment.
+I will publish the notice period and any cancellation fee here before bookings open. You will be able to review the policy before confirming an appointment.
 {{< /section >}}
 
-{{< cta title="Have a question before booking?" text="Ceri can help you understand the process and decide whether a consultation is the right next step." href="/contact/" label="Contact Ceri" >}}
+{{< cta title="Have a question before booking?" text="I can help you understand the process and decide whether a consultation is the right next step." href="/contact/" label="Contact me" >}}
